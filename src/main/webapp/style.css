@@ -1,0 +1,211 @@
+@charset "UTF-8";
+/* Navbar Styles */
+body {
+    background-image: url('/whitebg.jpg'); /* Path from webapp root */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Center links evenly */
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Navbar Links */
+.navbar a {
+    color: #fff; /* White text */
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    border-radius: 30px; /* Rounded, pill-shaped buttons */
+    margin: 0 15px; /* Spacing between the links */
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    background-color: #ff8c00; /* Orange color for hover */
+    color: #fff;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.navbar a.active {
+    background-color: #ff6347; /* Tomato color for active link */
+    color: #fff;
+}
+
+/* Ordered List Styling */
+ol {
+    padding-left: 25px;
+    counter-reset: custom-counter;
+}
+
+ol li {
+    position: relative;
+    margin: 12px 0;
+    padding-left: 35px;
+    font-size: 17px;
+    color: #444;
+    list-style-type: none;
+    transition: color 0.3s;
+}
+
+ol li::before {
+    content: counter(custom-counter) ". ";
+    counter-increment: custom-counter;
+    position: absolute;
+    left: 0;
+    color: #ff6347; /* Matching active link color */
+    font-weight: 700;
+    font-size: 19px;
+}
+
+ol li:hover {
+    color: #ff6347; /* Match custom numbering on hover */
+}
+
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
+    background-color: #eaeff5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h3 {
+    color: #333;
+    padding-top: 60px; /* Offset for fixed navbar */
+    margin-top: 20px;
+}
+
+/* Form Container Styles */
+.form-container {
+    width: 40%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 50%;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    background-color: white; /* Ensures the table has a white background */
+}
+
+td, th {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-of-type(even) {
+    background-color: #f9f9f9; /* Light grey background for alternate rows */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Slightly darker grey for hover effect */
+}
+
+/* Label Styles */
+label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Input, Select, and Textarea Styles */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #ff8c00; /* Focus color */
+}
+
+/* Button Styles */
+.button-container {
+    text-align: center;
+    padding-top: 20px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #2a2a72;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #3f3fb5;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        width: 100%;
+        text-align: left;
+        padding: 12px 20px;
+    }
+    
+    ol li {
+        font-size: 15px;
+        padding-left: 25px;
+    }
+    
+    .form-container {
+        width: 50%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    .button-container {
+        padding-top: 15px;
+    }
+}
